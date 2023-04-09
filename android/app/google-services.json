@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "479242760859",
+    "project_id": "dashboard-sisoil",
+    "storage_bucket": "dashboard-sisoil.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:479242760859:android:23097b3c5aeb84fde7cc3e",
+        "android_client_info": {
+          "package_name": "com.example.dashboard_sisoil"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "479242760859-rogqan4v4s6u8g2ev4golfnila8ttuj8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqfjSI_qPxoS8pw1GiuGVzRPj91ibbDx8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "479242760859-rogqan4v4s6u8g2ev4golfnila8ttuj8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
