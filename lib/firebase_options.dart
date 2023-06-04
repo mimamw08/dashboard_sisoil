@@ -21,11 +21,20 @@ class DefaultFirebaseOptions {
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
-        return android;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for android - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.iOS:
-        return ios;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for ios - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.macOS:
-        return macos;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for macos - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -44,39 +53,13 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBPJSflirYx6ZOB0VGl7D3yxxgcu9JBizI',
-    appId: '1:479242760859:web:a64c2819c0fe42c5e7cc3e',
-    messagingSenderId: '479242760859',
-    projectId: 'dashboard-sisoil',
-    authDomain: 'dashboard-sisoil.firebaseapp.com',
-    storageBucket: 'dashboard-sisoil.appspot.com',
-  );
-
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCqfjSI_qPxoS8pw1GiuGVzRPj91ibbDx8',
-    appId: '1:479242760859:android:23097b3c5aeb84fde7cc3e',
-    messagingSenderId: '479242760859',
-    projectId: 'dashboard-sisoil',
-    storageBucket: 'dashboard-sisoil.appspot.com',
-  );
-
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDi0UAojBvDQIb85MTB053SMMRvUOiCSvY',
-    appId: '1:479242760859:ios:1c84fdb3dabb60d4e7cc3e',
-    messagingSenderId: '479242760859',
-    projectId: 'dashboard-sisoil',
-    storageBucket: 'dashboard-sisoil.appspot.com',
-    iosClientId: '479242760859-o4cdpa78a9tjikv73mta2j4p01dttp77.apps.googleusercontent.com',
-    iosBundleId: 'com.example.dashboardSisoil',
-  );
-
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyDi0UAojBvDQIb85MTB053SMMRvUOiCSvY',
-    appId: '1:479242760859:ios:1c84fdb3dabb60d4e7cc3e',
-    messagingSenderId: '479242760859',
-    projectId: 'dashboard-sisoil',
-    storageBucket: 'dashboard-sisoil.appspot.com',
-    iosClientId: '479242760859-o4cdpa78a9tjikv73mta2j4p01dttp77.apps.googleusercontent.com',
-    iosBundleId: 'com.example.dashboardSisoil',
+    apiKey: 'AIzaSyDB3ZTu-WIhvxF1qtjU5Lp9GOTpYjmPEMA',
+    appId: '1:649783742740:web:adfa4e454e46c0ba743201',
+    messagingSenderId: '649783742740',
+    projectId: 'sisoil-9cb24',
+    authDomain: 'sisoil-9cb24.firebaseapp.com',
+    databaseURL: 'https://sisoil-9cb24-default-rtdb.asia-southeast1.firebasedatabase.app',
+    storageBucket: 'sisoil-9cb24.appspot.com',
+    measurementId: 'G-CGVTX2D4P6',
   );
 }

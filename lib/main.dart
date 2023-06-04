@@ -1,6 +1,10 @@
+import 'package:dashboard_sisoil/controllers/controller.dart';
 import 'package:dashboard_sisoil/page/login.dart';
+import 'package:dashboard_sisoil/page/splash_screen.dart';
+import 'package:dashboard_sisoil/page/welcome_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import 'firebase_options.dart';
 
@@ -19,11 +23,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'SI-Soil Dashboard',
-        theme: ThemeData(
-          primarySwatch: Colors.green,
-        ),
-        debugShowCheckedModeBanner: false,
-        home: login_page());
+      title: 'SI-Soil Dashboard',
+      theme: ThemeData(
+        primarySwatch: Colors.green,
+      ),
+      debugShowCheckedModeBanner: false,
+      home: MultiProvider(
+        providers: [
+          ChangeNotifierProvider(
+            create: (context) => Controller(),
+          )
+        ],
+        child: splash_screen(),
+      ),
+    );
   }
 }
