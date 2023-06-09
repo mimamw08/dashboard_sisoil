@@ -1,9 +1,26 @@
+import 'dart:async';
+
 import 'package:dashboard_sisoil/constants/constants.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
-class BarChartUsers extends StatelessWidget {
-  const BarChartUsers({Key? key}) : super(key: key);
+class BarChartUser extends StatefulWidget {
+  BarChartUser({Key? key}) : super(key: key);
+
+  @override
+  State<BarChartUser> createState() => _BarChartUserState();
+}
+
+class _BarChartUserState extends State<BarChartUser> {
+  final databaseReference = FirebaseDatabase.instance.ref();
+  List<FlSpot> chartData = [];
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

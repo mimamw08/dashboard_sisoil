@@ -1,4 +1,5 @@
 import 'package:dashboard_sisoil/page/dash_board_screen.dart';
+import 'package:dashboard_sisoil/page/home.dart';
 import 'package:dashboard_sisoil/page/regis.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -269,8 +270,8 @@ class _login_pageState extends State<login_page> {
                 password: _passController.text.trim());
 
         if (credential.user!.emailVerified) {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => DashBoardScreen()));
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => home()));
         } else {
           Fluttertoast.showToast(msg: 'Perlu Verifikasi email terlebih dahulu');
         }

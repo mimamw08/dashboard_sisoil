@@ -1,4 +1,5 @@
 import 'package:dashboard_sisoil/constants/constants.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
@@ -14,6 +15,36 @@ class _ViewLineChartState extends State<ViewLineChart> {
     primaryColor,
     secondaryColor,
   ];
+
+  DatabaseReference data = FirebaseDatabase.instance.ref();
+
+  var nilai_N;
+  var waktu;
+  var nilai;
+
+  var sum;
+  @override
+  void initState() {
+    profilberubah();
+    super.initState();
+  }
+
+  void profilberubah() {
+    data.child('Alat_Ukur1').onValue.listen((event) {
+      Map profiluser = event.snapshot.value as Map;
+
+      profiluser.forEach((key, value) {
+        setState(() {
+          nilai_N = ['N'];
+          waktu = ['Waktu'];
+          nilai = double.parse(nilai_N);
+          print('hasilnya' + nilai_N.toString());
+          sum = nilai + nilai;
+          print('hasilnya' + sum);
+        });
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,27 +62,7 @@ class _ViewLineChartState extends State<ViewLineChart> {
           titlesData: FlTitlesData(
             show: true,
             bottomTitles: SideTitles(
-                showTitles: true,
-                reservedSize: 22,
-                getTitles: (value) {
-                  switch (value.toInt()) {
-                    case 1:
-                      return 'Sun';
-                    case 4:
-                      return 'Mon';
-                    case 7:
-                      return 'Tue';
-                    case 10:
-                      return 'Wed';
-                    case 13:
-                      return 'Thr';
-                    case 16:
-                      return 'Fri';
-                    case 19:
-                      return 'Sat';
-                  }
-                  return '';
-                }),
+                showTitles: true, reservedSize: 22, getTitles: waktu),
           ),
           borderData: FlBorderData(
             show: false,
@@ -62,15 +73,7 @@ class _ViewLineChartState extends State<ViewLineChart> {
           minY: 6,
           lineBarsData: [
             LineChartBarData(
-                spots: [
-                  FlSpot(0, 3),
-                  FlSpot(4, 2),
-                  FlSpot(9, 4),
-                  FlSpot(12, 3),
-                  FlSpot(15, 5),
-                  FlSpot(18, 3),
-                  FlSpot(20, 4),
-                ],
+                spots: sum,
                 isCurved: true,
                 colors: [primaryColor],
                 barWidth: 5,

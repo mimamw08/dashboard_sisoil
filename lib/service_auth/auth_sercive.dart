@@ -1,4 +1,5 @@
 import 'package:dashboard_sisoil/page/dash_board_screen.dart';
+import 'package:dashboard_sisoil/page/home.dart';
 import 'package:dashboard_sisoil/page/login.dart';
 import 'package:dashboard_sisoil/page/splash_screen.dart';
 import 'package:dashboard_sisoil/page/welcome_page.dart';
@@ -13,7 +14,7 @@ class authService {
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (BuildContext context, snapshot) {
           if (snapshot.hasData) {
-            return DashBoardScreen();
+            return home();
           } else {
             return welcome_page();
           }

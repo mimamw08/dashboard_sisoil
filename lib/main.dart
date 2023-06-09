@@ -1,7 +1,5 @@
 import 'package:dashboard_sisoil/controllers/controller.dart';
-import 'package:dashboard_sisoil/page/login.dart';
 import 'package:dashboard_sisoil/page/splash_screen.dart';
-import 'package:dashboard_sisoil/page/welcome_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -13,7 +11,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {

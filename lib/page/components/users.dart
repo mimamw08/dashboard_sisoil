@@ -61,7 +61,7 @@ class _UsersState extends State<Users> {
             ],
           ),
           Expanded(
-            child: BarChartUsers(),
+            child: BarChartUser(),
           )
         ],
       ),

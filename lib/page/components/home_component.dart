@@ -1,15 +1,17 @@
-import 'package:dashboard_sisoil/constants/constants.dart';
-import 'package:dashboard_sisoil/constants/responsive.dart';
-import 'package:dashboard_sisoil/page/components/profile_info.dart';
+import 'package:dashboard_sisoil/page/components/InfoProfile_home.dart';
+import 'package:dashboard_sisoil/page/components/bar_alat1.dart';
+import 'package:dashboard_sisoil/page/components/component_prediksi.dart';
+import 'package:dashboard_sisoil/page/components/info_Alat.dart';
+import 'package:dashboard_sisoil/page/components/tab_bar.dart';
 import 'package:dashboard_sisoil/page/components/users.dart';
 import 'package:dashboard_sisoil/page/components/viewers.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'bar_alat1.dart';
+import '../../constants/constants.dart';
+import '../../constants/responsive.dart';
 
-class DashboardContent extends StatelessWidget {
-  const DashboardContent({Key? key}) : super(key: key);
+class home_component extends StatelessWidget {
+  const home_component({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +20,7 @@ class DashboardContent extends StatelessWidget {
         padding: EdgeInsets.all(appPadding),
         child: Column(
           children: [
-            ProfileInfo(),
+            infoProfile_home(),
             SizedBox(
               height: appPadding,
             ),
@@ -31,9 +33,26 @@ class DashboardContent extends StatelessWidget {
                       flex: 5,
                       child: Column(
                         children: [
+                          Row(
+                            children: [
+                              if (!Responsive.isMobile(context))
+                                SizedBox(
+                                  width: appPadding,
+                                ),
+                              Expanded(
+                                flex: 3,
+                                child: info_alat(),
+                              ),
+                            ],
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                          ),
                           SizedBox(
                             height: appPadding,
                           ),
+                          if (Responsive.isMobile(context))
+                            SizedBox(
+                              height: appPadding,
+                            ),
                           Row(
                             children: [
                               if (!Responsive.isMobile(context))
@@ -51,26 +70,22 @@ class DashboardContent extends StatelessWidget {
                             height: appPadding,
                           ),
                           if (Responsive.isMobile(context))
-                            Row(
-                              children: [
-                                if (!Responsive.isMobile(context))
-                                  SizedBox(
-                                    width: appPadding,
-                                  ),
-                                Expanded(
-                                  flex: 3,
-                                  child: alat1(),
-                                ),
-                              ],
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                            ),
-                          SizedBox(
-                            height: appPadding,
-                          ),
-                          if (Responsive.isMobile(context))
                             SizedBox(
                               height: appPadding,
                             ),
+                          Row(
+                            children: [
+                              if (!Responsive.isMobile(context))
+                                SizedBox(
+                                  width: appPadding,
+                                ),
+                              Expanded(
+                                flex: 3,
+                                child: prediksi(),
+                              ),
+                            ],
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                          ),
                         ],
                       ),
                     ),

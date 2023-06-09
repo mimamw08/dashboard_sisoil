@@ -1,6 +1,8 @@
 import 'package:dashboard_sisoil/constants/constants.dart';
 import 'package:dashboard_sisoil/page/components/drawer_list_tile.dart';
 import 'package:dashboard_sisoil/page/components/login.dart';
+import 'package:dashboard_sisoil/page/dash_board_screen.dart';
+import 'package:dashboard_sisoil/page/home.dart';
 import 'package:dashboard_sisoil/service_auth/auth_sercive.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +21,12 @@ class DrawerMenu extends StatelessWidget {
             child: Image.asset("asset/images/icon_logo.png"),
           ),
           DrawerListTile(
-              title: 'Home', svgSrc: 'asset/icons/home.svg', tap: () {}),
+              title: 'Home',
+              svgSrc: 'asset/icons/home.svg',
+              tap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => home()));
+              }),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: appPadding * 2),
             child: Divider(
@@ -30,7 +37,10 @@ class DrawerMenu extends StatelessWidget {
           DrawerListTile(
               title: 'Statistics',
               svgSrc: 'asset/icons/Statistics.svg',
-              tap: () {}),
+              tap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => DashBoardScreen()));
+              }),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: appPadding * 2),
             child: Divider(
