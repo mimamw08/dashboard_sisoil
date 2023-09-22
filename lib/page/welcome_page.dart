@@ -10,11 +10,14 @@ class welcome_page extends StatefulWidget {
   State<welcome_page> createState() => _welcome_pageState();
 }
 
+ScrollController _scrollController = ScrollController();
+
 class _welcome_pageState extends State<welcome_page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: Scrollbar(
+      controller: _scrollController,
       child: Column(
         children: [
           if (Responsive.isDesktop(context)) Expanded(child: front_image()),

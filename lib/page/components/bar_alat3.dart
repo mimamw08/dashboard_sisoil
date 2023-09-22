@@ -39,7 +39,7 @@ class _alat3State extends State<alat3> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'N: ' + alat_3['N'],
+                      'N: ' + alat_3['n'],
                       style:
                           TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
                     ),
@@ -47,7 +47,7 @@ class _alat3State extends State<alat3> {
                       height: 2,
                     ),
                     Text(
-                      'P: ' + alat_3['P'],
+                      'P: ' + alat_3['p'],
                       style:
                           TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
                     ),
@@ -55,7 +55,7 @@ class _alat3State extends State<alat3> {
                       height: 2,
                     ),
                     Text(
-                      'K:  ' + alat_3['K'],
+                      'K:  ' + alat_3['k'],
                       style:
                           TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
                     ),
@@ -63,17 +63,17 @@ class _alat3State extends State<alat3> {
                       height: 2,
                     ),
                     Text(
-                      'Moist: ' + alat_3['Moist'],
+                      'Moist: ' + alat_3['moisture'],
                       style:
                           TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
                     ),
                     Text(
-                      'pH: ' + alat_3['pH'],
+                      'pH: ' + alat_3['ph'],
                       style:
                           TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
                     ),
                     Text(
-                      'Waktu: ' + alat_3['Waktu'],
+                      'Waktu: ' + alat_3['waktu'],
                       style:
                           TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
                     ),
@@ -87,7 +87,7 @@ class _alat3State extends State<alat3> {
 
   @override
   Widget build(BuildContext context) {
-    DatabaseReference reference = FirebaseDatabase.instance.ref('Alat_Ukur3/');
+    DatabaseReference reference = FirebaseDatabase.instance.ref('Alat_Ukur2/');
     Query dbref = reference.limitToLast(10);
     return Container(
       height: double.infinity,

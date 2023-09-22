@@ -55,86 +55,86 @@ class _info_alatState extends State<info_alat> {
             ],
           ),
         ),
-        Container(
-          margin: EdgeInsets.only(left: appPadding),
-          padding: EdgeInsets.symmetric(
-            horizontal: appPadding,
-            vertical: appPadding / 2,
-          ),
-          decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(5),
-              boxShadow: [BoxShadow(blurRadius: 1)]),
-          child: Column(
-            children: [
-              SizedBox(
-                width: appPadding,
-              ),
-              if (!Responsive.isMobile(context))
-                Padding(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: appPadding / 2),
-                    child: Column(
-                      children: [
-                        Text(
-                          'Alat-2',
-                          style: TextStyle(
-                            color: textColor,
-                            fontWeight: FontWeight.w800,
-                          ),
-                        ),
-                        Text(
-                          '%hslprediksi',
-                          style: TextStyle(
-                            color: textColor,
-                            fontWeight: FontWeight.w800,
-                          ),
-                        ),
-                      ],
-                    )),
-            ],
-          ),
-        ),
-        Container(
-          margin: EdgeInsets.only(left: appPadding),
-          padding: EdgeInsets.symmetric(
-            horizontal: appPadding,
-            vertical: appPadding / 2,
-          ),
-          decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(5),
-              boxShadow: [BoxShadow(blurRadius: 1)]),
-          child: Column(
-            children: [
-              SizedBox(
-                width: appPadding,
-              ),
-              if (!Responsive.isMobile(context))
-                Padding(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: appPadding / 2),
-                    child: Column(
-                      children: [
-                        Text(
-                          'Alat-3',
-                          style: TextStyle(
-                            color: textColor,
-                            fontWeight: FontWeight.w800,
-                          ),
-                        ),
-                        Text(
-                          '%hslprediksi',
-                          style: TextStyle(
-                            color: textColor,
-                            fontWeight: FontWeight.w800,
-                          ),
-                        ),
-                      ],
-                    )),
-            ],
-          ),
-        )
+        // Container(
+        //   margin: EdgeInsets.only(left: appPadding),
+        //   padding: EdgeInsets.symmetric(
+        //     horizontal: appPadding,
+        //     vertical: appPadding / 2,
+        //   ),
+        //   decoration: BoxDecoration(
+        //       color: Colors.white,
+        //       borderRadius: BorderRadius.circular(5),
+        //       boxShadow: [BoxShadow(blurRadius: 1)]),
+        //   child: Column(
+        //     children: [
+        //       SizedBox(
+        //         width: appPadding,
+        //       ),
+        //       if (!Responsive.isMobile(context))
+        //         Padding(
+        //             padding:
+        //                 const EdgeInsets.symmetric(horizontal: appPadding / 2),
+        //             child: Column(
+        //               children: [
+        //                 Text(
+        //                   'Alat-2',
+        //                   style: TextStyle(
+        //                     color: textColor,
+        //                     fontWeight: FontWeight.w800,
+        //                   ),
+        //                 ),
+        //                 Text(
+        //                   '%hslprediksi',
+        //                   style: TextStyle(
+        //                     color: textColor,
+        //                     fontWeight: FontWeight.w800,
+        //                   ),
+        //                 ),
+        //               ],
+        //             )),
+        //     ],
+        //   ),
+        // ),
+        // Container(
+        //   margin: EdgeInsets.only(left: appPadding),
+        //   padding: EdgeInsets.symmetric(
+        //     horizontal: appPadding,
+        //     vertical: appPadding / 2,
+        //   ),
+        //   decoration: BoxDecoration(
+        //       color: Colors.white,
+        //       borderRadius: BorderRadius.circular(5),
+        //       boxShadow: [BoxShadow(blurRadius: 1)]),
+        //   child: Column(
+        //     children: [
+        //       SizedBox(
+        //         width: appPadding,
+        //       ),
+        //       if (!Responsive.isMobile(context))
+        //         Padding(
+        //             padding:
+        //                 const EdgeInsets.symmetric(horizontal: appPadding / 2),
+        //             child: Column(
+        //               children: [
+        //                 Text(
+        //                   'Alat-3',
+        //                   style: TextStyle(
+        //                     color: textColor,
+        //                     fontWeight: FontWeight.w800,
+        //                   ),
+        //                 ),
+        //                 Text(
+        //                   '%hslprediksi',
+        //                   style: TextStyle(
+        //                     color: textColor,
+        //                     fontWeight: FontWeight.w800,
+        //                   ),
+        //                 ),
+        //               ],
+        //             )),
+        //     ],
+        //   ),
+        // )
       ],
     );
   }

@@ -1,3 +1,4 @@
+import 'package:dashboard_sisoil/constants/constants.dart';
 import 'package:dashboard_sisoil/page/about_us.dart';
 import 'package:dashboard_sisoil/page/login.dart';
 import 'package:flutter/material.dart';
@@ -56,16 +57,22 @@ class _front_imageState extends State<front_image> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Text('Logo',
+                  Container(
+                    height: 90,
+                    width: 100,
+                    child: Image.asset('asset/images/new_logo.png'),
+                  ),
+
+                  // Text('Logo',
+                  //     style: GoogleFonts.poppins(
+                  //       color: Colors.green,
+                  //       fontSize: 24,
+                  //       fontWeight: FontWeight.bold,
+                  //     )),
+                  Text('SI SOIL',
                       style: GoogleFonts.poppins(
                         color: Colors.green,
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                      )),
-                  Text('Si-Soil',
-                      style: GoogleFonts.poppins(
-                        color: Colors.green,
-                        fontSize: 24,
+                        fontSize: 32,
                         fontWeight: FontWeight.bold,
                       )),
                   SizedBox(
@@ -88,9 +95,6 @@ class _front_imageState extends State<front_image> {
                   ),
                 ],
               ),
-              Column(
-                children: [Text('data')],
-              )
             ],
           ),
           SizedBox(
@@ -112,14 +116,14 @@ class _front_imageState extends State<front_image> {
                               fontWeight: FontWeight.w600),
                         ),
                         SizedBox(
-                          height: 30,
+                          height: 20,
                         ),
                         Column(
                           children: [
                             Row(
                               children: [
                                 SizedBox(
-                                  width: 500,
+                                  width: 400,
                                 ),
                                 Image.asset('asset/images/pengukuran.png'),
                                 Column(
@@ -150,7 +154,7 @@ class _front_imageState extends State<front_image> {
                             Row(
                               children: [
                                 SizedBox(
-                                  width: 500,
+                                  width: 400,
                                 ),
                                 Image.asset('asset/images/kalkulator.png'),
                                 Column(
@@ -181,7 +185,7 @@ class _front_imageState extends State<front_image> {
                             Row(
                               children: [
                                 SizedBox(
-                                  width: 500,
+                                  width: 400,
                                 ),
                                 Image.asset('asset/images/prediksi.png'),
                                 Column(
@@ -211,7 +215,7 @@ class _front_imageState extends State<front_image> {
                     ),
                   ))),
           Container(
-            height: 200,
+            height: 250,
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(color: Colors.green),
             child: Align(
@@ -219,16 +223,20 @@ class _front_imageState extends State<front_image> {
               child: Column(
                 children: [
                   SizedBox(
-                    height: 20,
+                    height: 10,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Text('Logo'),
+                      Container(
+                        height: 90,
+                        width: 80,
+                        child: Image.asset('asset/images/new_logo.png'),
+                      ),
                       GestureDetector(
                         onTap: () async {
                           await openUrl(
-                              'https://play.google.com/store/apps/details?id=com.agrisoil.nkpapp');
+                              'https://play.google.com/store/apps/details?id=com.aplikasi.newagrisoil');
                         },
                         child: Text(
                           'Check Our App',

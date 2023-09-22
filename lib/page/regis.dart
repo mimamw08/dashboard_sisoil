@@ -36,8 +36,8 @@ class _regis_pageState extends State<regis_page> {
                     Container(
                       height: 400,
                       width: 250,
-                      decoration: BoxDecoration(
-                          border: Border.all(color: Colors.black)),
+                      // decoration: BoxDecoration(
+                      //     border: Border.all(color: Colors.black)),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -50,7 +50,7 @@ class _regis_pageState extends State<regis_page> {
                             child: GestureDetector(
                               onTap: () async {
                                 await openUrl(
-                                    'https://play.google.com/store/apps/details?id=com.agrisoil.nkpapp');
+                                    'https://play.google.com/store/apps/details?id=com.aplikasi.newagrisoil');
                               },
                               child: Image.asset('asset/images/playstore.png'),
                             ),

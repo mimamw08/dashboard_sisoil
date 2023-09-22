@@ -1,5 +1,7 @@
 import 'package:dashboard_sisoil/page/about_us.dart';
+import 'package:dashboard_sisoil/page/home.dart';
 import 'package:dashboard_sisoil/page/login.dart';
+import 'package:dashboard_sisoil/page/welcome_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -53,18 +55,25 @@ class _about_contentState extends State<about_content> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Text('Logo',
-                      style: GoogleFonts.poppins(
-                        color: Colors.white,
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                      )),
-                  Text('Si-Soil',
-                      style: GoogleFonts.poppins(
-                        color: Colors.white,
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                      )),
+                  Container(
+                    height: 90,
+                    width: 100,
+                    child: Image.asset('asset/images/new_logo.png'),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => welcome_page()));
+                    },
+                    child: Text('SI SOIL',
+                        style: GoogleFonts.poppins(
+                          color: Colors.white,
+                          fontSize: 32,
+                          fontWeight: FontWeight.bold,
+                        )),
+                  ),
                   SizedBox(
                     height: 40,
                     width: 100,
@@ -141,7 +150,7 @@ class _about_contentState extends State<about_content> {
                     ),
                   ))),
           Container(
-            height: 200,
+            height: 250,
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(color: Colors.green),
             child: Align(
@@ -149,16 +158,20 @@ class _about_contentState extends State<about_content> {
               child: Column(
                 children: [
                   SizedBox(
-                    height: 20,
+                    height: 10,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Text('Logo'),
+                      Container(
+                        height: 90,
+                        width: 80,
+                        child: Image.asset('asset/images/new_logo.png'),
+                      ),
                       GestureDetector(
                         onTap: () async {
                           await openUrl(
-                              'https://play.google.com/store/apps/details?id=com.agrisoil.nkpapp');
+                              'https://play.google.com/store/apps/details?id=com.aplikasi.newagrisoil');
                         },
                         child: Text(
                           'Check Our App',

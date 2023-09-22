@@ -30,14 +30,35 @@ class _splash_screenState extends State<splash_screen> {
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Align(
-            alignment: Alignment.center,
-            child: Container(
-              height: 300,
-              width: 300,
-              child: Image.asset("asset/images/lpdp.png"),
-            ),
-          ),
+          if (!Responsive.isMobile(context))
+            Align(
+                alignment: Alignment.center,
+                child: Column(
+                  children: [
+                    Container(
+                      height: 300,
+                      width: 300,
+                      child: Image.asset("asset/images/logo_sisoil.png"),
+                    ),
+                    SizedBox(
+                      height: 50,
+                    ),
+                    Text(
+                      'Supported by',
+                      style: GoogleFonts.poppins(
+                          color: Colors.black,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Container(
+                      height: 40,
+                      child: Image.asset("asset/images/logo_lpdp.png"),
+                    ),
+                  ],
+                )),
         ],
       )),
     );

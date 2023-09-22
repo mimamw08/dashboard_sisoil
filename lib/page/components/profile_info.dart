@@ -56,7 +56,7 @@ class _ProfileInfoState extends State<ProfileInfo> {
                   padding:
                       const EdgeInsets.symmetric(horizontal: appPadding / 2),
                   child: Text(
-                    'Hii, $hsldekripnama',
+                    'Hi, $hsldekripnama statistik kamu hari ini',
                     style: TextStyle(
                       color: textColor,
                       fontWeight: FontWeight.w800,

@@ -15,32 +15,27 @@ class _ViewLineChartState extends State<ViewLineChart> {
     primaryColor,
     secondaryColor,
   ];
-
-  DatabaseReference data = FirebaseDatabase.instance.ref();
-
-  var nilai_N;
-  var waktu;
+  DatabaseReference databaseReference = FirebaseDatabase.instance.ref();
   var nilai;
+  var waktu;
+  var nilaichart;
 
-  var sum;
   @override
-  void initState() {
-    profilberubah();
+  void initstate() {
     super.initState();
+    getdata();
   }
 
-  void profilberubah() {
-    data.child('Alat_Ukur1').onValue.listen((event) {
-      Map profiluser = event.snapshot.value as Map;
+  void getdata() {
+    databaseReference.child('Alat_Ukur3/').onValue.listen((event) {
+      Map data = event.snapshot.value as Map;
 
-      profiluser.forEach((key, value) {
+      data.forEach((key, value) {
         setState(() {
-          nilai_N = ['N'];
-          waktu = ['Waktu'];
-          nilai = double.parse(nilai_N);
-          print('hasilnya' + nilai_N.toString());
-          sum = nilai + nilai;
-          print('hasilnya' + sum);
+          nilai = ['n'];
+          waktu = ['waktu'];
+          List<double> doubleNilai = nilai.map(double.tryParse).toList();
+          doubleNilai = nilaichart;
         });
       });
     });
@@ -62,7 +57,7 @@ class _ViewLineChartState extends State<ViewLineChart> {
           titlesData: FlTitlesData(
             show: true,
             bottomTitles: SideTitles(
-                showTitles: true, reservedSize: 22, getTitles: waktu),
+                showTitles: true, reservedSize: 20, getTitles: waktu),
           ),
           borderData: FlBorderData(
             show: false,
@@ -73,7 +68,7 @@ class _ViewLineChartState extends State<ViewLineChart> {
           minY: 6,
           lineBarsData: [
             LineChartBarData(
-                spots: sum,
+                spots: nilaichart,
                 isCurved: true,
                 colors: [primaryColor],
                 barWidth: 5,

@@ -1,9 +1,8 @@
 import 'package:dashboard_sisoil/page/components/InfoProfile_home.dart';
-import 'package:dashboard_sisoil/page/components/bar_alat1.dart';
+import 'package:dashboard_sisoil/page/components/bar_alat3.dart';
+import 'package:dashboard_sisoil/page/components/component_list.dart';
 import 'package:dashboard_sisoil/page/components/component_prediksi.dart';
-import 'package:dashboard_sisoil/page/components/info_Alat.dart';
-import 'package:dashboard_sisoil/page/components/tab_bar.dart';
-import 'package:dashboard_sisoil/page/components/users.dart';
+import 'package:dashboard_sisoil/page/components/list_prediksi.dart';
 import 'package:dashboard_sisoil/page/components/viewers.dart';
 import 'package:flutter/material.dart';
 
@@ -41,7 +40,7 @@ class home_component extends StatelessWidget {
                                 ),
                               Expanded(
                                 flex: 3,
-                                child: info_alat(),
+                                child: prediksi(),
                               ),
                             ],
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -73,26 +72,9 @@ class home_component extends StatelessWidget {
                             SizedBox(
                               height: appPadding,
                             ),
-                          Row(
-                            children: [
-                              if (!Responsive.isMobile(context))
-                                SizedBox(
-                                  width: appPadding,
-                                ),
-                              Expanded(
-                                flex: 3,
-                                child: prediksi(),
-                              ),
-                            ],
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                          ),
                         ],
                       ),
                     ),
-                    if (!Responsive.isMobile(context))
-                      SizedBox(
-                        width: appPadding,
-                      ),
                   ],
                 ),
               ],

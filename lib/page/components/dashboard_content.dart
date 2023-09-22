@@ -1,5 +1,7 @@
 import 'package:dashboard_sisoil/constants/constants.dart';
 import 'package:dashboard_sisoil/constants/responsive.dart';
+import 'package:dashboard_sisoil/page/components/component_list.dart';
+import 'package:dashboard_sisoil/page/components/component_prediksi.dart';
 import 'package:dashboard_sisoil/page/components/profile_info.dart';
 import 'package:dashboard_sisoil/page/components/users.dart';
 import 'package:dashboard_sisoil/page/components/viewers.dart';
@@ -31,9 +33,6 @@ class DashboardContent extends StatelessWidget {
                       flex: 5,
                       child: Column(
                         children: [
-                          SizedBox(
-                            height: appPadding,
-                          ),
                           Row(
                             children: [
                               if (!Responsive.isMobile(context))
@@ -51,19 +50,24 @@ class DashboardContent extends StatelessWidget {
                             height: appPadding,
                           ),
                           if (Responsive.isMobile(context))
-                            Row(
-                              children: [
-                                if (!Responsive.isMobile(context))
-                                  SizedBox(
-                                    width: appPadding,
-                                  ),
-                                Expanded(
-                                  flex: 3,
-                                  child: alat1(),
-                                ),
-                              ],
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                            SizedBox(
+                              height: appPadding,
                             ),
+                          Row(
+                            children: [
+                              if (!Responsive.isMobile(context))
+                                SizedBox(
+                                  width: appPadding,
+                                ),
+                              Expanded(
+                                  flex: 3,
+                                  child: Align(
+                                    alignment: Alignment.centerLeft,
+                                    child: component_list(),
+                                  )),
+                            ],
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                          ),
                           SizedBox(
                             height: appPadding,
                           ),
@@ -74,10 +78,6 @@ class DashboardContent extends StatelessWidget {
                         ],
                       ),
                     ),
-                    if (!Responsive.isMobile(context))
-                      SizedBox(
-                        width: appPadding,
-                      ),
                   ],
                 ),
               ],
